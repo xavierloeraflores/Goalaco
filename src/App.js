@@ -16,11 +16,11 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <h3>Search</h3>
         <UserProvider>
           <Application />
         </UserProvider>
 
+        <h3>Search</h3>
         <Search />
         <h2>Cards</h2>
         <Cards />

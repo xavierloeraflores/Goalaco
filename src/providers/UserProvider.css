@@ -1,0 +1,21 @@
+#LoginCSS {
+  background-color: rgba(75, 0, 172, 0.24);
+  align-content: center;
+  padding: 20%;
+  color: rgba(161, 125, 207, 0.911);
+}
+#LoginCSS label,
+p {
+  font-size: larger;
+}
+#LoginCSS a {
+  color: rgba(161, 125, 207, 0.911);
+}
+#LoginCSS input {
+  background-color: rgba(75, 0, 172, 0.24);
+  color: rgba(161, 125, 207, 0.911);
+  font-size: larger;
+}
+#LoginCSS button {
+  size: larger;
+}

@@ -1,6 +1,6 @@
 import React, { Component, createContext } from "react";
 import { auth, generateUserDocument } from "../firebase";
-
+import "./UserProvider.css";
 export const UserContext = createContext({ user: null });
 
 class UserProvider extends Component {
@@ -19,9 +19,11 @@ class UserProvider extends Component {
     const { user } = this.state;
 
     return (
-      <UserContext.Provider value={user}>
-        {this.props.children}
-      </UserContext.Provider>
+      <div>
+        <UserContext.Provider value={user}>
+          {this.props.children}
+        </UserContext.Provider>
+      </div>
     );
   }
 }
