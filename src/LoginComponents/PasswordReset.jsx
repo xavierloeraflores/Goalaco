@@ -58,7 +58,9 @@ const PasswordReset = () => {
           </button>
         </form>
 
-        <Link to="/">&larr; back to sign in page</Link>
+        <p>
+          <Link to="/">&larr; back to sign in page</Link>
+        </p>
       </div>
     </div>
   );
