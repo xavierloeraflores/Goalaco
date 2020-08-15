@@ -14,6 +14,10 @@ class App extends React.Component {
   render() {
     return (
       <div>
+        <UserProvider>
+          <Application />
+        </UserProvider>
+
         <Search />
         <Cards />
       </div>
