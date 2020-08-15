@@ -19,17 +19,6 @@ class App extends React.Component {
       </div>
     );
   }
+}
 
-  /*
-Login component
-function App() {
-  return (
-    <UserProvider>
-      <Application />
-    </UserProvider>
-  );
-  
-}
-*/
-}
 export default App;
