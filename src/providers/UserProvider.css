@@ -1,12 +1,22 @@
 #LoginCSS {
   background-color: rgba(75, 0, 172, 0.24);
   align-content: center;
-  padding: 20%;
-  color: rgba(161, 125, 207, 0.911);
+  margin-top: 15%;
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-bottom: 75%;
+  color: rgb(170, 142, 207);
+  border-color: black;
+  border-style: solid;
+  text-decoration-color: rgb(161, 125, 207);
+  padding-left: 5%;
 }
 #LoginCSS label,
 p {
   font-size: larger;
+}
+#LoginCSS h1 {
+  text-decoration: underline;
 }
 #LoginCSS a {
   color: rgba(161, 125, 207, 0.911);
