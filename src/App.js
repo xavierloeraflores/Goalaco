@@ -19,7 +19,8 @@ class App extends React.Component {
       </div>
     );
   }
-/*
+
+  /*
 Login component
 function App() {
   return (
