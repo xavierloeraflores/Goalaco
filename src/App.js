@@ -10,7 +10,7 @@ import { UserContext } from "./providers/UserProvider";
 import { Cards, Search } from "./components";
 import styles from "./App.module.css";
 
-//User Provider-> login
+//User Provider-> login section; will add nav bar later
 
 class App extends React.Component {
   render() {
