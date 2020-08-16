@@ -7,13 +7,14 @@ import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
+import Progress from "../Progress/Progress";
 
 const useStyles = makeStyles({
   root: {
     maxWidth: 345,
   },
   media: {
-    height: 140,
+    height: 180,
   },
 });
 
@@ -25,16 +26,16 @@ export default function MediaCard() {
       <CardActionArea>
         <CardMedia
           className={classes.media}
-          image="./public/logo192.png"
-          title="Making a house"
+          image="https://upload.wikimedia.org/wikipedia/en/thumb/f/f8/Mr._Krabs.svg/1200px-Mr._Krabs.svg.png"
+          title="Making a million dollars"
         />
         <CardContent>
+          <Progress value={80} max={100} />
           <Typography gutterBottom variant="h5" component="h2">
-            Making a house
+            Making a Millions
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            Making a house can be challenge for many people but if you follow
-            these steps it will make it very easy.
+            Ahoy me boy make a millions with me Mr.Krabs GAHAHAHAH
           </Typography>
         </CardContent>
       </CardActionArea>

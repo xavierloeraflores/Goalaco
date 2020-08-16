@@ -8,12 +8,7 @@ import MediaCard from "./components/Cards/Cards";
 
 class App extends React.Component {
   render() {
-    return (
-      <div>
-        <h1>Progress Bar</h1>
-        <Progress value={80} max={100} />
-      </div>
-    );
+    return <div></div>;
   }
 }
 export default App;
