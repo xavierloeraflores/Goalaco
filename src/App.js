@@ -8,7 +8,7 @@ import ProfilePage from "./LoginComponents/ProfilePage";
 import { UserContext } from "./providers/UserProvider";
 
 import { Cards, Search, Progress } from "./components";
-import styles from "./App.module.css";
+import Styles from "./App.module.css";
 
 //User Provider-> login section; will add nav bar later
 
@@ -16,11 +16,10 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <h3>Search</h3>
         <UserProvider>
           <Application />
         </UserProvider>
-
+        <h3>Search</h3>
         <Search />
         <h2>Cards</h2>
         <Cards />

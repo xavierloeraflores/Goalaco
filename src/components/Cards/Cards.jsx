@@ -1,60 +1,51 @@
 import React from "react";
-import { Card, CardContent, Typography, Grid } from "@material-ui/core";
-import cx from "classnames";
-import styles from "./Cards.module.css";
+import { makeStyles } from "@material-ui/core/styles";
+import Card from "@material-ui/core/Card";
+import CardActionArea from "@material-ui/core/CardActionArea";
+import CardActions from "@material-ui/core/CardActions";
+import CardContent from "@material-ui/core/CardContent";
+import CardMedia from "@material-ui/core/CardMedia";
+import Button from "@material-ui/core/Button";
+import Typography from "@material-ui/core/Typography";
 
-const Cards = () => {
+const useStyles = makeStyles({
+  root: {
+    maxWidth: 345,
+  },
+  media: {
+    height: 140,
+  },
+});
+
+export default function MediaCard() {
+  const classes = useStyles();
+
   return (
-    <div className={styles.container}>
-      <Grid container spacing={3} justify="center">
-        <Grid
-          item
-          component={Card}
-          xs={12}
-          md={3}
-          className={cx(styles.card, styles.goal1)}
-        >
-          <CardContent>
-            <Typography color="textSecondary" gutterBottom>
-              Goal1:
-            </Typography>
-            <Typography varaint="h5">Description:</Typography>
-            <Typography color="textSecondary">Progress:</Typography>
-          </CardContent>
-        </Grid>
-        <Grid
-          item
-          component={Card}
-          xs={12}
-          md={3}
-          className={cx(styles.card, styles.goal2)}
-        >
-          <CardContent>
-            <Typography color="textSecondary" gutterBottom>
-              Goal2:
-            </Typography>
-            <Typography varaint="h5">Description:</Typography>
-            <Typography color="textSecondary">Progress:</Typography>
-          </CardContent>
-        </Grid>
-        <Grid
-          item
-          component={Card}
-          xs={12}
-          md={3}
-          className={cx(styles.card, styles.goal3)}
-        >
-          <CardContent>
-            <Typography color="textSecondary" gutterBottom>
-              Goal3:
-            </Typography>
-            <Typography varaint="h5">Description:</Typography>
-            <Typography color="textSecondary">Progress:</Typography>
-          </CardContent>
-        </Grid>
-      </Grid>
-    </div>
+    <Card className={classes.root}>
+      <CardActionArea>
+        <CardMedia
+          className={classes.media}
+          image="./public/logo192.png"
+          title="Making a house"
+        />
+        <CardContent>
+          <Typography gutterBottom variant="h5" component="h2">
+            Making a house
+          </Typography>
+          <Typography variant="body2" color="textSecondary" component="p">
+            Making a house can be challenge for many people but if you follow
+            these steps it will make it very easy.
+          </Typography>
+        </CardContent>
+      </CardActionArea>
+      <CardActions>
+        <Button size="small" color="primary">
+          Share
+        </Button>
+        <Button size="small" color="primary">
+          See Steps
+        </Button>
+      </CardActions>
+    </Card>
   );
-};
-
-export default Cards;
+}
