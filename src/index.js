@@ -8,6 +8,7 @@ import Application from "./LoginComponents/Application";
 import UserProvider from "./providers/UserProvider";
 import ProfilePage from "./LoginComponents/ProfilePage";
 import { UserContext } from "./providers/UserProvider";
+import Nav from "./components/Nav/Nav";
 //Do not edit^^
 
 ReactDOM.render(
@@ -15,6 +16,7 @@ ReactDOM.render(
     <UserProvider>
       <Application />
     </UserProvider>
+    <Nav />
 
     <App />
   </React.StrictMode>,
