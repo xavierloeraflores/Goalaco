@@ -1,6 +1,7 @@
 import React, { Component, createContext } from "react";
 import { auth, generateUserDocument } from "../firebase";
 import "./UserProvider.css";
+import Button from "@material-ui/core/Button";
 export const UserContext = createContext({ user: null });
 
 class UserProvider extends Component {
