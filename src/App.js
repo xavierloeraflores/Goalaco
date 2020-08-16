@@ -9,9 +9,6 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <UserProvider>
-          <Application />
-        </UserProvider>
         <h3>Search</h3>
         <Search />
         <h2>Cards</h2>
