@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "@reach/router";
 import { signInWithGoogle } from "../firebase";
 import { auth } from "../firebase";
+import Button from "@material-ui/core/Button";
 
 const SignIn = () => {
   const [email, setEmail] = useState("");
@@ -57,21 +58,21 @@ const SignIn = () => {
             onChange={(event) => onChangeHandler(event)}
           />
           <p>{linebreak}</p>
-          <button
+          <Button
             onClick={(event) => {
               signInWithEmailAndPasswordHandler(event, email, password);
             }}
           >
             Sign in
-          </button>
+          </Button>
         </form>
-        <button
+        <Button
           onClick={() => {
             signInWithGoogle();
           }}
         >
           Sign in with Google
-        </button>
+        </Button>
         <p>
           Don't have an account? <Link to="signUp">Sign up here</Link> <br />{" "}
           <Link to="passwordReset">Forgot Password?</Link>
