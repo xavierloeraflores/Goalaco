@@ -16,6 +16,7 @@ const PasswordReset = () => {
     }
   };
 
+  const linebreak = "\n";
   const sendResetEmail = (event) => {
     event.preventDefault();
     auth
@@ -31,22 +32,12 @@ const PasswordReset = () => {
       });
   };
   return (
-    <div className="mt-8">
-      <h1 className="text-xl text-center font-bold mb-3">
-        Reset your Password
-      </h1>
-      <div className="border border-blue-300 mx-auto w-11/12 md:w-2/4 rounded py-8 px-4 md:px-8">
+    <div id="LoginCSS">
+      <h1>Reset your Password</h1>
+      <div>
         <form action="">
-          {emailHasBeenSent && (
-            <div className="py-3 bg-green-400 w-full text-white text-center mb-3">
-              An email has been sent to you!
-            </div>
-          )}
-          {error !== null && (
-            <div className="py-3 bg-red-600 w-full text-white text-center mb-3">
-              {error}
-            </div>
-          )}
+          {emailHasBeenSent && <div>An email has been sent to you!</div>}
+          {error !== null && <div>{error}</div>}
           <label htmlFor="userEmail" className="w-full block">
             Email:
           </label>
@@ -59,8 +50,8 @@ const PasswordReset = () => {
             onChange={onChangeHandler}
             className="mb-3 w-full px-1 py-2"
           />
+          <p>{linebreak}</p>
           <button
-            className="w-full bg-blue-400 text-white py-3"
             onClick={(event) => {
               sendResetEmail(event);
             }}
@@ -69,12 +60,9 @@ const PasswordReset = () => {
           </button>
         </form>
 
-        <Link
-          to="/"
-          className="my-2 text-blue-700 hover:text-blue-800 text-center block"
-        >
-          &larr; back to sign in page
-        </Link>
+        <p>
+          <Link to="/">&larr; back to sign in page</Link>
+        </p>
       </div>
     </div>
   );

@@ -1,7 +1,0 @@
-Login component
-function App() {
-  return (
-    <UserProvider>
-      <Application />
-    </UserProvider>
-  );
