@@ -8,6 +8,7 @@ import { UserContext } from "../providers/UserProvider";
 import PasswordReset from "./PasswordReset";
 import Logout from "./Logout";
 import { app } from "firebase";
+import App from "../App";
 function Application() {
   const user = useContext(UserContext);
   return user ? (

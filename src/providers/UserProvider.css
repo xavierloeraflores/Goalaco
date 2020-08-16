@@ -28,4 +28,7 @@ p {
 }
 #LoginCSS button {
   size: larger;
+  font-size: larger;
+  background-color: rgb(170, 142, 207);
+  color: rgba(75, 0, 172, 0.9);
 }

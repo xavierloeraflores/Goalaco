@@ -16,6 +16,7 @@ const PasswordReset = () => {
     }
   };
 
+  const linebreak = "\n";
   const sendResetEmail = (event) => {
     event.preventDefault();
     auth
@@ -49,6 +50,7 @@ const PasswordReset = () => {
             onChange={onChangeHandler}
             className="mb-3 w-full px-1 py-2"
           />
+          <p>{linebreak}</p>
           <button
             onClick={(event) => {
               sendResetEmail(event);
