@@ -6,7 +6,7 @@ import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
-import { Cards } from "..";
+import { Cards, UserCards, Profile } from "..";
 import Search from "../Search/Search";
 import { UserContext } from "../../providers/UserProvider";
 import { app } from "firebase";
@@ -73,8 +73,8 @@ export default function SimpleTabs() {
         >
           <Tab label="Your Goals" {...a11yProps(0)} />
           <Tab label="Feed" {...a11yProps(1)} />
-          <Tab label="Profile" {...a11yProps(2)} />
-          <Tab label="Search" {...a11yProps(3)} />
+          <Tab label="Search" {...a11yProps(2)} />
+          <Tab label="Profile" {...a11yProps(3)} />
           <Tab label="Log Out" {...a11yProps(4)} />
         </Tabs>
       </AppBar>
@@ -82,13 +82,13 @@ export default function SimpleTabs() {
         <Cards />
       </TabPanel>
       <TabPanel value={value} index={1}>
-        Feed
+        <UserCards />
       </TabPanel>
       <TabPanel value={value} index={2}>
-        Profile
+        <Search />
       </TabPanel>
       <TabPanel value={value} index={3}>
-        <Search />
+        <Profile />
       </TabPanel>
       <TabPanel value={value} index={4}>
         Log Out
