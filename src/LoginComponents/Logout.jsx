@@ -7,17 +7,18 @@ const Logout = () => {
   const { photoURL, displayName, email } = user;
   console.log(user);
 
-  return (
-    <div>
-      <button
-        onClick={() => {
-          auth.signOut();
-        }}
-      >
-        Sign out
-      </button>
-    </div>
-  );
+  return <div></div>;
 };
 //test
+
+/*
+Do No Edit anything on this page!!!!
+
+
+
+
+Log out has be moved to the navBar
+
+*/
+
 export default Logout;

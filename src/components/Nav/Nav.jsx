@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
@@ -8,6 +8,9 @@ import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 import { Cards } from "..";
 import Search from "../Search/Search";
+import { UserContext } from "../../providers/UserProvider";
+import { app } from "firebase";
+import { auth } from "../../firebase";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -36,6 +39,9 @@ TabPanel.propTypes = {
 };
 
 function a11yProps(index) {
+  if (index == 4) {
+    auth.signOut();
+  }
   return {
     id: `simple-tab-${index}`,
     "aria-controls": `simple-tabpanel-${index}`,
