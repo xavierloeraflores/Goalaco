@@ -10,10 +10,6 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <h3>Search</h3>
-        <Search />
-        <h2>Cards</h2>
-        <Cards />
         <h1>Progress Bar</h1>
         <Progress value={80} max={100} />
       </div>
