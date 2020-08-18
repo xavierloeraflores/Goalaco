@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
@@ -8,9 +8,7 @@ import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 import { Cards, UserCards, Profile } from "..";
 import Search from "../Search/Search";
-import { UserContext } from "../../providers/UserProvider";
-import { app } from "firebase";
-import { auth } from "../../firebase";
+import Add from "../../AddComponents/Add";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -24,7 +22,7 @@ function TabPanel(props) {
       {...other}
     >
       {value === index && (
-        <Box p={5}>
+        <Box p={6}>
           <Typography>{children}</Typography>
         </Box>
       )}
@@ -39,9 +37,6 @@ TabPanel.propTypes = {
 };
 
 function a11yProps(index) {
-  if (index == 4) {
-    auth.signOut();
-  }
   return {
     id: `simple-tab-${index}`,
     "aria-controls": `simple-tabpanel-${index}`,
@@ -71,26 +66,30 @@ export default function SimpleTabs() {
           onChange={handleChange}
           aria-label="simple tabs example"
         >
-          <Tab label="Your Goals" {...a11yProps(0)} />
-          <Tab label="Feed" {...a11yProps(1)} />
-          <Tab label="Search" {...a11yProps(2)} />
-          <Tab label="Profile" {...a11yProps(3)} />
-          <Tab label="Log Out" {...a11yProps(4)} />
+          <Tab label="Feed" {...a11yProps(0)} />
+          <Tab label="Your Goals" {...a11yProps(1)} />
+          <Tab label="Add Goal" {...a11yProps(2)} />
+          <Tab label="Search" {...a11yProps(3)} />
+          <Tab label="Profile" {...a11yProps(4)} />
+          <Tab label="Log Out" {...a11yProps(5)} />
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
-        <Cards />
-      </TabPanel>
-      <TabPanel value={value} index={1}>
         <UserCards />
       </TabPanel>
+      <TabPanel value={value} index={1}>
+        <Cards />
+      </TabPanel>
       <TabPanel value={value} index={2}>
-        <Search />
+        <Add />
       </TabPanel>
       <TabPanel value={value} index={3}>
-        <Profile />
+        <Search />
       </TabPanel>
       <TabPanel value={value} index={4}>
+        <Profile />
+      </TabPanel>
+      <TabPanel value={value} index={5}>
         Log Out
       </TabPanel>
     </div>

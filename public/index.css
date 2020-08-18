@@ -1,0 +1,230 @@
+:root {
+  --clr-primary: rgba(1, 7, 58, 0.74);
+  --clr-light: #faf5f5;
+  --clr-dark: #333;
+  --clr-warning: rgb(99, 36, 36);
+}
+
+*,
+*::before,
+*::after {
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+.addbody {
+  margin: 0;
+  font-family: "Work Sans", sans-serif;
+  font-weight: 300;
+  font-size: 1.5rem;
+  background-color: var(--clr-primary);
+  color: var(--clr-light);
+
+  display: grid;
+  grid:
+    "header header header header" auto
+    ".lists  active." auto/
+    1fr minmax(100px, 300px) minmax(250px, 500px) 1fr;
+}
+
+.title {
+  grid-area: header;
+  text-align: center;
+  font-size: calc(5vw + 1rem);
+  font-weight: 800;
+}
+
+/*.all-short-goals{
+  grid-area: list; 
+}
+  when this is being used, the goal list will be ontop   */
+
+.goal-list {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  list-style: circle;
+  padding-left: 1.1em;
+}
+
+.list-name {
+  cursor: pointer;
+}
+
+.list-name:hover {
+  opacity: 0.7;
+}
+
+.addform {
+  display: flex;
+}
+
+.btn {
+  cursor: pointer;
+  background: 0;
+  border: 0;
+  padding: 0;
+  color: inherit;
+}
+
+.btn.create {
+  font-size: 1.5rem;
+  font-weight: 900;
+  margin-right: 0.25em;
+  transition: opacity 250ms ease-in;
+}
+
+.btn.create:hover {
+  opacity: 0.7;
+}
+
+.new {
+  background: transparent;
+  border: 0;
+  color: inherit;
+  border-bottom: 1px solid currentColor;
+  font-size: inherit;
+
+  transition: border-bottom 150ms ease-in;
+  order: 2;
+}
+
+.new:focus {
+  border-bottom-width: 3px;
+}
+
+.new:focus::placeholder {
+  opacity: 0.3;
+}
+
+.new.goal {
+  font-size: 1.1rem;
+}
+
+.active-list {
+  font-weight: 700;
+}
+
+.task-list {
+  --spacer: 3rem;
+
+  grid-area: active;
+  background: var(--clr-light);
+  color: var(--clr-dark);
+}
+
+.goal-header {
+  padding: var(--spacer);
+  background: rgb(216, 196, 170);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.goal-title {
+  margin: 0 1em 0 0;
+}
+
+.task-count {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.task-body {
+  padding: var(--spacer);
+  position: relative;
+}
+
+[type="checkbox"] {
+  opacity: 0;
+  position: absolute;
+}
+
+.task label {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  margin-bottom: 0.2em;
+}
+
+.task {
+  position: relative;
+}
+
+.task::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: -1%;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.1;
+}
+
+.custom-checkbox {
+  --size: 0.75em;
+  display: inline-block;
+  width: var(--size);
+  height: var(--size);
+  margin-right: var(--size);
+  cursor: pointer;
+  border: 1px solid rgb(197, 155, 76);
+  border-radius: 50%;
+  transform: scale(1);
+  transition: transform 200ms ease-in-out;
+}
+
+.task:hover .custom-checkbox,
+[type="checkbox"]:focus + label .custom-checkbox {
+  transform: scale(1.2);
+  color: var(--ckr-primary);
+}
+
+[type="checkbox"]:checked + label .custom-checkbox {
+  background: var(--clr-primary);
+  border-color: var(--clr-primary);
+  box-shadow: inset 0 0 0px 2px whitesmoke;
+}
+
+[type="checkbox"]:checked + label {
+  opacity: 0.5;
+}
+
+.task label::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 150ms ease-in-out;
+}
+
+[type="checkbox"]:checked + label::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.delete-task {
+  display: flex;
+  justify-content: space-evenly;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: -35px;
+  color: var(--clr-light);
+}
+
+.btn.delete {
+  font-weight: 700;
+  letter-spacing: 1px;
+  opacity: 0.7;
+  font-size: 1rem;
+  transition: color 200ms;
+}
+
+.btn.delete:hover {
+  color: var(--clr-warning);
+}

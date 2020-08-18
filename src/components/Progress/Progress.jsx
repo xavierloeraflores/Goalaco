@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./Progress.module.css";
+
 import PropTypes from "prop-types";
 
 const Progress = ({ value, max }) => {
