@@ -21,8 +21,8 @@ export default function ImageAvatars() {
   return (
     <div className={classes.root}>
       <Avatar
-        alt="Patrick"
-        src="https://th.bing.com/th/id/OIP.bGUz0iRAGP5x8RGgmq8RhwAAAA?w=141&h=150&c=7&o=5&dpr=1.05&pid=1.7"
+        alt="Vincent"
+        src="https://th.bing.com/th/id/OIP.WZ1tfPWqR59Fj6_jW8U-QAHaJ4?w=128&h=180&c=7&o=5&dpr=1.05&pid=1.7"
         className={classes.large}
       />
     </div>
